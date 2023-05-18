@@ -1,17 +1,14 @@
 # Select official python 3 runtime
-FROM python:3
-
-# Creates a directory in /usr/src/app
-RUN mkdir -p /usr/src/app
+FROM python:3.9
 
 # Change work directory to it
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy current directory into the created directory
-COPY . /usr/src/app
+COPY . /app
 
 # Install all dependencies
-RUN python -mpip install -r requrinments.txt
+RUN pip install --trusted-host pypi.python.org Flask
 
 # Expose the port
 EXPOSE 5000
