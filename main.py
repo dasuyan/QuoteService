@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 import random
+import os
 
 port = int(os.environ.get("PORT", 5000))
 QUOTES_FILE = "./quotes.txt" # quote file
