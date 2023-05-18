@@ -10,8 +10,5 @@ COPY . /app
 # Install all dependencies
 RUN pip install --trusted-host pypi.python.org Flask
 
-# Expose the port
-EXPOSE 5000
-
 # Start the application
 CMD ["python", "main.py"]
