@@ -2,6 +2,7 @@ from flask import Flask
 from flask import jsonify
 import random
 
+port = int(os.environ.get("PORT", 5000))
 QUOTES_FILE = "./quotes.txt" # quote file
 quotes = [] # stores all quotes
 
@@ -35,5 +36,5 @@ def page_not_found(e):
 
 if __name__ == '__main__':
     loadQuotes() # load quotes 
-    app.run(host='0.0.0.0', port=5000, debug=True) # run application
+    app.run(host='0.0.0.0', port=port, debug=True) # run application
     
